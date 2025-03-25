@@ -14,13 +14,24 @@ struct HotKeySectionView: View {
     let searchQuery: String
     
     //TODO: Use Theme
-    let sectionHeaderFont: Font = .body
-    let fontWeight: Font.Weight = .semibold
-    let sectionHeaderColor: Color = .red
+    let sectionHeaderFont: Font = Theme.sectionHeaderFont
+    let fontWeight: Font.Weight = Theme.fontWeight
+    let subtitleColor: Color = Theme.subtitleColor
     
     //TODO: Filter according to 'SearchQuery'
     var filterHotkeyModel: [HotKeyModel]{
-        return hotkeyModels
+        if searchQuery.isEmpty || searchQuery.count == 1{
+            return hotkeyModels
+        }else {
+            return hotkeyModels
+                .filter{
+                    $0
+                    .text
+                    .lowercased()
+                    .contains(searchQuery.lowercased())
+                }
+        }
+     
     }
     
     var body: some View {
@@ -35,7 +46,7 @@ struct HotKeySectionView: View {
                 Text(hotkeyCategorName)
                     .font(sectionHeaderFont)
                     .fontWeight(fontWeight)
-                    .foregroundStyle(sectionHeaderColor)
+                    .foregroundStyle(subtitleColor)
             }
 
         }
@@ -46,4 +57,5 @@ struct HotKeySectionView: View {
     Form {
         HotKeySectionView(hotkeyCategorName: "Navigation", hotkeyModels: [.init(modifier: [.command], character: "1", text: "Project"),.init(modifier: [.command], character: "2", text: "Source Control"),], searchQuery: "")
     }
+    .frame(minWidth: Theme.frameWidth, minHeight: Theme.frameHeight)
 }

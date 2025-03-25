@@ -10,6 +10,7 @@ import SwiftUI
 struct MainHotKeysView: View {
     @State private var searchQuery = ""
     var viewModel : HotKeyCategoryViewModel = HotKeyCategoryViewModel()
+    let listStyle = Theme.listStyle
     
     var body: some View {
         NavigationStack{
@@ -21,11 +22,13 @@ struct MainHotKeysView: View {
                         searchQuery: searchQuery
                     )
                 }
+                .listStyle(listStyle)
             }
             .navigationTitle("Xcode HotKeys")
             .searchable(text: $searchQuery,prompt: "Search...")
             KeySymbolView()
         }
+        .frame(minWidth: Theme.frameWidth ,minHeight: Theme.frameHeight)
     }
 }
 
