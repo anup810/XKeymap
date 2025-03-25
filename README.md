@@ -22,13 +22,13 @@ XKeymap is an app that provides a reference for Xcode keyboard shortcuts, allowi
 ## Screenshots
 
 ### Mac
-![Mac Screenshot](Screenshots/mac.png)
+![Mac Screenshot](XKeymap/Screenshots/mac.png)
 
 ### iPad
-![iPad Screenshot](Screenshots/ipad.png)
+![iPad Screenshot](XKeymap/Screenshots/ipad.png)
 
 ### iPhone
-![iPhone Screenshot](Screenshots/iphone.png)
+![iPhone Screenshot](XKeymap/Screenshots/iphone.png)
 
 ## Installation
 
