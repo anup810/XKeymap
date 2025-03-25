@@ -13,8 +13,15 @@ struct HotKeyModel:Identifiable{
     let character: String
     let text: String
     
-    //TODO: Update Description
+    
     var description: String{
-        "\(modifier)\(character.capitalized)"
+        var result = ""
+        for modifiers in modifier{
+            result += modifiers.rawValue
+            
+        }
+        result += " \(character.capitalized)"
+        return result
+      
     }
 }

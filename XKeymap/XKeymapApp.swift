@@ -11,7 +11,7 @@ import SwiftUI
 struct XKeymapApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainHotKeysView()
         }
     }
 }

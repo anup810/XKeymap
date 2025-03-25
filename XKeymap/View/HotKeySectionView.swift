@@ -29,6 +29,7 @@ struct HotKeySectionView: View {
                 ForEach(filterHotkeyModel) { hotkeyModel in
                     //TODO: HotKeyRow
                     Text("\(hotkeyModel.character) \(hotkeyModel.text)")
+                    HotKeyRowView(hotkeyModel: hotkeyModel, searchQuery: searchQuery)
                 }
             } header: {
                 Text(hotkeyCategorName)
